@@ -94,6 +94,14 @@ class SquadDao(BaseDao):
         bd = Bd(tupla[5], tupla[6])
         squad = Squad(tupla[0], linguagem.__dict__, front.__dict__, bd.__dict__,tupla[7])
         return squad.__dict__
+    
+    def has_nome(self, nome_id):
+        comando_sql_buscar_nome = f"SELECT * FROM squad where nome like '%{nome_id}%' limit 1 "
+        a = super().buscar_por_id(comando_sql_buscar_nome)
+        return (True if a else False)
+
+
+
         
         
             
