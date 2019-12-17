@@ -1,4 +1,4 @@
 class Front:
     def __init__(self, front, id = None):
-        self.front = front
-        self.id = id
+        self.__front = front
+        self.__id = id
